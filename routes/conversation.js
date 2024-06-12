@@ -14,7 +14,7 @@ router.post("/conversation", async (req, res) => {
   const newConversation = new Conversation({
     participants,
     messages,
-    summary,
+    summery,
   });
 
   try {

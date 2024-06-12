@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 300;
+const PORT = process.env.PORT || 3000;
 const conversationRoutes = require("./routes/conversation");
 const adminRoutes = require("./routes/admin");
 
@@ -22,6 +22,7 @@ mongoose
     console.error(err);
   });
 
+  app.use(express.json())
 app.use("/api", conversationRoutes);
 app.use("/api", adminRoutes);
 app.get("/", (req, res) => {
